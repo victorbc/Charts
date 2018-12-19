@@ -265,7 +265,14 @@ open class HorizontalBarChartRenderer: BarChartRenderer
                 context.setFillColor(dataSet.color(atIndex: j).cgColor)
             }
 
-            context.fill(barRect)
+            if isStacked {
+                context.fill(barRect)
+            }else{
+                let bezierPath = UIBezierPath(roundedRect: barRect, cornerRadius: 10)
+                context.addPath(bezierPath.cgPath)
+                
+                context.drawPath(using: .fill)
+            }
 
             if drawBorder
             {

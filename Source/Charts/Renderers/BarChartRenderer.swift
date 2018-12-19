@@ -716,6 +716,9 @@ open class BarChartRenderer: BarLineScatterCandleBubbleRenderer
         if (angleRadians == 0.0)
         {
             context.drawText(value, at: CGPoint(x: xPos, y: yPos), align: align, attributes: [.font: font, .foregroundColor: color])
+//            context.drawLinearGradient(CGGradient(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors: [UIColor.green] as CFArray, locations: nil)!,
+//                                       start: CGPoint(x: xPos, y: yPos-10), end: CGPoint(x: xPos, y: yPos-10),
+//                                       options:CGGradientDrawingOptions())
         }
         else
         {
